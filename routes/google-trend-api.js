@@ -23,6 +23,7 @@ router.get('/interestOverTime', (req, res) => {
         })
         .catch(function(err){
             console.error('Oh no there was an error', err);
+            throw new Error('Trending Interest Over Time Error :'+err.message);
         });
 });
 
