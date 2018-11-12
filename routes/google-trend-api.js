@@ -7,8 +7,13 @@ const patternDate = 'YYYY-MM-DD';
 router.get('/interestOverTime', (req, res) => {
     let requestObject = {
         keyword: req.query['keyword'],
-        geo: req.query['geo']
+        geo: req.query['geo'],
+        h1: req.query['h1'],
+        timezone: req.query['timezone'],
+        category: req.query['category'],
+        granularTimeResolution: req.query['granularTimeResolution']
     };
+    // Warning Invalid Date
     if (req.query['startTime']) requestObject.startTime = moment(req.query['startTime'], patternDate).toDate();
     if (req.query['endTime'])  requestObject.endTime = moment(req.query['endTime'], patternDate).toDate();
 
